@@ -1,0 +1,14 @@
+$float: (left, right) !default;
+$numbers: (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100) !default;
+$percent: nth($numbers, 100);
+$flex: 0 0 calcPercent($percent, nth($numbers, 1), '/');
+$size: 0.5rem 0rem;
+$margin: unquote($percent + 'rem');
+$box-shadow-negative: 0 -0.5rem 1rem rgba(#000, .15);
+
+/* icons */
+$icons: ("close":"\e900", "disconnected":"\e901", "connected":"\e902") !default;
+$file: 'icomoon';
+$location: ('eot': '../fonts/' + $file + '.eot', 'ttf': '../fonts/' + $file + '.ttf', 'woff': '../fonts/' + $file + '.woff', 'svg': '../fonts/' + $file + '.svg') !default;
+$caracterIcon: '?ecgi2s';
+$flash: ('warning':#ecbf58, 'info':#6fb1c7, 'success':#5bc3a2, 'error':#d64a49) !default;

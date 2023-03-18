@@ -1,0 +1,52 @@
+<?php
+
+$head = $this->Html->heads('meta', ['charset' => 'UTF-8']) . $this->Html->heads(
+        'meta',
+        [
+            'name' => 'viewport',
+            'content' => 'width=device-width, initial-scale=1, shrink-to-fit=no'
+        ]
+    ) . $this->Optimizer->optimize($title, $icon);
+foreach ($styles as $style) {
+    $head .= $this->Html->heads(
+        'css',
+        ['url' => DS . 'css' . DS . $style . '.css', 'rel' => 'stylesheet']
+    );
+}
+$body = $this->Html->tag(
+        $this->Html->tag(
+            $this->Html->image(
+                '/img/rest-full.png',
+                ['id' => 'logo', 'link' => ['url' => '/main/index']]
+            ) . $this->Html->listing(
+                ['Olá Visitante', ''],
+                [
+                    'li' => ['class' => 'usuario_logado', []],
+                    'class' => 'info_logado'
+                ]
+            ),
+            ['tag' => 'div', 'class' => 'container-header']
+        ),
+        ['element' => 'header']
+    ) . $this->Flash->render() . $this->Html->tag(
+        $this->content(), ['element' => 'main']
+    ) . $this->Html->tag(
+        $this->Html->tag(
+            'Desenvolvido por Simao web Solutions',
+            ['tag' => 'div', 'class' => 'container-footer']
+        ),
+        ['element' => 'footer']
+    );
+foreach ($scripts as $script) {
+    $body .= $this->Html->heads(
+        'script', ['url' => DS . 'js' . DS . $script . '.js']
+    );
+}
+//$script = $scriptTime;
+//$body .= $this->transfersBlock($script)->transfersBlock();
+$layout = $this->Html->typeDocumentHtml() . $this->Html->tag(
+        $this->Html->tag($head, ['element' => 'head']) . $this->Html->tag(
+            $body, ['element' => 'body']
+        ),
+        ['element' => 'html']
+    );

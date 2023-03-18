@@ -1,0 +1,41 @@
+@function calculetion($pixel, $distance, $important) {
+  @if ($important == 1) {
+    @return calc(#{$pixel} - #{$distance}) !important;
+  }
+  @return calc(#{$pixel} - #{$distance});
+}
+
+@function calcPercent($pixel, $number, $type) {
+  $result: 0;
+  @if ($type=='-') {
+    $result: ($pixel - $number);
+  } @else if ($type=='+') {
+    $result: ($pixel + $number);
+  } @else if ($type=='*') {
+    $result: ($pixel * $number);
+  } @else {
+    $result: ($pixel / $number);
+  }
+  @return percentage($result / $percent);
+}
+
+@function rem($size, $number, $type, $debug:false) {
+  $result: (nth($size, 1) / $number);
+  @if($debug) {
+    @debug $result;
+    @debug nth($size,2);
+    @debug $result - nth($size,2);
+  }
+  @if (nth($size,2) != '') {
+    @if ($type == '-') {
+      $result: $result - nth($size, 2);
+    } @else if ($type == '+') {
+      $result: $result + nth($size, 2);
+    } @else if ($type == '*') {
+      $result: $result * nth($size, 2);
+    } @else {
+      $result: $result / nth($size, 2);
+    }
+  }
+  @return $result;
+}

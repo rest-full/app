@@ -1,0 +1,33 @@
+@function urlIndetification($url,$iconIdenfier,$location) {
+    $newKey: '';
+    $format: '';
+    $result: '';
+    @each $key, $value in $url {
+        $newKey: $value+$iconIdenfier;
+        @if ($key == 'eot') {
+            $newKey: $newKey + '#iefix';
+            $format: 'embedded-opentype';
+        } @else if ($key == 'svg') {
+            $newKey: $newKey + '#' + $location;
+            $format: 'svg';
+        } @else {
+            @if ($key == 'woff') {
+                $format: 'woff';
+            } @else if ($key == 'ttf') {
+                $format: 'truetype';
+            }
+        }
+        @if ($key == 'eot') {
+            $result: url($newKey) + ' ' + format($format) + ', '
+        } @else if ($key == 'svg') {
+            $result: $result + url($newKey) + ' ' + format($format)
+        } @else {
+            $result: $result + url($newKey) + ' ' + format($format) + ', '
+        }
+    }
+    @return $result;
+}
+
+@function eot($url) {
+    @return map-get($url, 'eot');
+}

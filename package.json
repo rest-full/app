@@ -1,0 +1,23 @@
+{
+    "author": "Jose Luis <joselbsimaoftp@yahoo.com.br>",
+    "dependencies": {},
+    "description": "Aplicação do skeleton app do framework Rest-Full com integração total a api e web.",
+    "devDependencies": {
+        "bootstrap": "5.*",
+        "jquery": "3.*",
+        "gulp": "4.*",
+        "gulp-browserify": "0.*",
+        "gulp-concat": "2.*",
+        "gulp-sass": "4.*",
+        "gulp-uglify": "3.*",
+        "gulp-sourcemaps": "3.*"
+    },
+    "license": "MIT",
+    "main": "index.php",
+    "name": "rest-full",
+    "scripts": {
+        "dev": "gulp developer",
+        "prod": "gulp production"
+    },
+    "version": "1.0.0"
+}

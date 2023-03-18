@@ -1,0 +1,157 @@
+/* error developer */
+h1 {
+  font-weight: nth($numbers,7) * $percent;
+}
+
+#corpo {
+  line-height: (nth($numbers, 3) / nth($numbers, 2));
+  box-sizing: border-box;
+  background-color: #ddd9ce;
+}
+
+.error {
+  width: unquote($percent + '%');
+  margin-left: unquote((nth($numbers,1) - nth($numbers,1)) + 'px');
+}
+
+.errorTitle {
+  @extend .error;
+  background-color: #ff0000;
+  color: #ffff00;
+}
+
+.cols-5 {
+  flex: $flex;
+  margin: unquote(rem(($percent, ($percent - nth($numbers, 99))), $percent, '-') + 'rem') unquote(rem(($percent, ''), $percent, '-') + 'rem') !important;
+  float: left;
+  max-width: unquote((($percent * nth($numbers, 6)) + nth($numbers, 3)) + 'px') !important;
+}
+
+.cols-7 {
+  flex: $flex;
+  max-width: calculetion(percentage($percent / $percent), unquote(((nth($numbers,100) * nth($numbers,6)) + nth($numbers,35)) + 'px'), 1);
+}
+
+.title {
+  background-color: red;
+  color: yellow;
+  font-weight: (nth($numbers, 7) * $percent);
+  font-size: unquote(rem(($percent, ''), nth($numbers, 50), '-') + rem(($percent, $percent), nth($numbers, 2), '/') + 'rem');
+}
+
+.badge-info {
+  color: #fff;
+  background-color: #17a2b8 !important;
+  width: unquote(($percent - nth($numbers, 63)) + 'rem !important');
+  padding: $size;
+  height: unquote(nth($numbers, 65) + 'px');
+
+  span {
+    font-size: calcPercent($percent, 10, '-');
+    font-weight: (7 * $percent);
+    background-color: #17a2b8 !important;
+    padding: $size;
+    position: relative;
+    top: unquote((nth($numbers, 1) - nth($numbers, 1)) + 'rem');
+    line-height: 1.5rem;
+  }
+}
+
+.badge {
+  display: inline-block;
+  width: unquote(($percent - nth($numbers, 64))+'rem');
+  padding: $size;
+  margin: $size;
+  font-size: calcPercent($percent, nth($numbers,25), '-');
+  font-weight: (7 * $percent);
+  line-height: nth($numbers,1);
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: unquote(rem(($percent, $percent), 4, '/') + 'rem');
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: unquote('-'+rem(($percent, ''), ($percent + nth($numbers, 10)), '-') + 'rem') !important;
+  width: percentage($percent / $percent);
+  margin-left: unquote(rem(($percent, ($percent - nth($numbers, 99))), $percent, '-') + 'rem') !important;
+}
+
+.row-info {
+  @extend .row;
+  margin: unquote(rem(($percent, $percent), 4, '/') + 'rem') unquote(rem(($percent, ($percent - nth($numbers, 99))), $percent, '-') + 'rem') !important;
+  background-color: #17a2b8;
+
+  &:nth-child(1) {
+    margin-top: unquote(rem(($percent, ($percent - nth($numbers, 99))), $percent, '-') + 'rem') !important;
+  }
+
+  &:nth-child(10) {
+    margin-bottom: unquote(rem(($percent, ($percent - nth($numbers, 99))), $percent, '-') + 'rem') !important;
+  }
+
+}
+
+.border {
+  border: unquote(nth($numbers, 1) + 'px') solid #dee2e6;
+  width: unquote($percent + '%');
+  padding: unquote(rem(($percent, $percent), 4, '/') + 'rem') unquote(rem(($percent, $percent), 8, '/') + 'rem') !important;
+  background-color: #17a2b8;
+}
+
+.bg-info {
+  margin-top: unquote(rem((($percent * nth($numbers, 50)), $percent), $percent, '/') + 'rem') !important;
+}
+
+.disabled {
+  display: none;
+}
+
+.cols-12 {
+  @extend .cols-7;
+  max-width: calculetion(percentage($percent / $percent), unquote(nth($numbers, 63) + 'px'), 1);
+  background-color: #ffffff;
+}
+
+.cols-3 {
+  @extend .cols-5;
+  margin-left: unquote(rem(($percent, $percent), ($percent - nth($numbers, 90)), '/') + 'rem') !important;
+  margin-right: unquote(rem((($percent * nth($numbers, 25)), $percent), $percent, '/') + 'rem') !important;
+  max-width: unquote(nth($numbers, 55) + 'px') !important;
+  padding-left: unquote(rem(($percent, ''), $percent, '/') + rem(($percent, $percent), nth($numbers, 2), '/') + 'rem') !important;
+  background-color: #ffffff;
+  text-align: right;
+}
+
+.active {
+  background-color: blue !important;
+  color: white;
+}
+
+/* error production */
+.number {
+  text-align: center;
+  font-weight: bold;
+  font-size: unquote(rem(($percent, nth($numbers, 5)), $percent,'*') + 'rem');
+  margin-top: unquote(rem(($percent, nth($numbers, 7)), $percent,'*') + 'rem') !important;
+}
+
+.text {
+  font-size: unquote(rem(($percent, ''), $percent,'*') + 'rem');
+  text-align: center;
+  line-height: unquote(rem(($percent, $percent), (($percent - nth($numbers, 20)) / $percent), '/') + 'rem');
+  margin: unquote(rem(($percent, ''), $percent,'*') + 'rem') 0rem !important;
+}
+
+.support {
+  font-size: unquote(rem(($percent, ''), $percent,'*') + 'rem');
+  font-weight: bold;
+  font-style: italic;
+  margin-top: unquote(rem(($percent, nth($numbers, 8)), $percent,'*') + 'rem') !important;
+  text-align: center;
+}

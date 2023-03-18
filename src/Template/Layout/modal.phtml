@@ -1,0 +1,178 @@
+<?php
+
+if ($mode == 'confirm') {
+    $modal = $this->Html->tag(
+            $this->Html->tag(
+                '',
+                'h4',
+                array_merge(['class' => 'modal-title'], $title)
+            ) . $this->Form->control(
+                'X',
+                [
+                    'type' => 'button', 'class' => 'close float-right',
+                    'id' => 'close'
+                ]
+            ),
+            'div',
+            ['class' => 'modal-header']
+        ) . $this->Html->tag(
+            $this->Html->tag(
+                $this->Form->control(
+                    'Confirmar',
+                    [
+                        'type' => 'submit',
+                        'label' => false,
+                        'class' => 'border-light shadow-sm form-control btn btn-primary',
+                        'div' => [
+                            'class' => 'form-group-btn',
+                            'style' => 'margin-right:0.5rem;float:left;width:48%;'
+                        ]
+                    ]
+                ) . $this->Form->control(
+                    'Cancelar',
+                    [
+                        'type' => 'button',
+                        'label' => false,
+                        'class' => 'border-light shadow-sm form-control btn btn-primary',
+                        'div' => [
+                            'class' => 'form-group-btn',
+                            'style' => 'margin-left:0.5rem;float:left;width:48%;'
+                        ]
+                    ]
+                ),
+                'div',
+                ['class' => 'form-group form-btn-double btns']
+            ),
+            'div',
+            ['class' => 'modal-body']
+        );
+    if ($form) {
+        $modal = $this->Form->create(
+            $modal,
+            [
+                'url' => '#', 'class' => 'modal-content forms shadow',
+                'method' => ''
+            ]
+        );
+    }
+    $modal = $this->Html->tag(
+        $this->Html->tag(
+            $modal,
+            'div',
+            ['class' => 'modal-content forms shadow']
+        ),
+        'div',
+        ['class' => 'modal-dialog', 'id' => 'dialog']
+    );
+} elseif ($mode == 'alert') {
+    $modal = $this->Html->tag(
+            $this->Html->tag(
+                '',
+                'h4',
+                ['class' => 'modal-title', 'id' => 'alert']
+            ) . $this->Form->control(
+                'X',
+                [
+                    'type' => 'button', 'class' => 'close float-right',
+                    'id' => 'close'
+                ]
+            ),
+            'div',
+            ['class' => 'modal-header']
+        ) . $this->Html->tag(
+            $this->Html->tag(
+                $this->Form->control(
+                    'OK',
+                    [
+                        'type' => 'button',
+                        'label' => false,
+                        'class' => 'border-light shadow-sm form-control btn btn-primary',
+                        'id' => 'close',
+                        'div' => [
+                            'class' => 'form-group-btn',
+                            'style' => 'margin-right:0.5rem;float:right;width:48%;'
+                        ]
+                    ]
+                ),
+                'div',
+                ['class' => 'form-group form-btn-double btns']
+            ),
+            'div',
+            ['class' => 'modal-body']
+        );
+    $modal = $this->Html->tag(
+        $modal,
+        'div',
+        ['class' => 'modal-dialog', 'id' => 'dialog']
+    );
+} elseif ($mode == 'insert') {
+    $modal = $this->Html->tag(
+        $this->Form->create(
+            $this->Html->tag(
+                $this->Html->tag(
+                    $text,
+                    'h4',
+                    ['class' => 'modal-title']
+                ) . $this->Form->control(
+                    'X',
+                    [
+                        'type' => 'button', 'class' => 'close float-right',
+                        'id' => 'close'
+                    ]
+                ),
+                'div',
+                ['class' => 'modal-header']
+            ) . $this->Html->tag(
+                $datas . $this->Html->tag(
+                    $this->Form->control(
+                        $button, [
+                            'type' => 'button', 'label' => false,
+                            'id' => 'executing',
+                            'class' => 'border-light shadow-sm form-control btn btn-primary btn-disabled',
+                            'div' => [
+                                'class' => 'form-group-btn',
+                                'style' => 'margin-right:0.5rem;float:left;width:48%;'
+                            ]
+                        ]
+                    ) . $this->Form->control(
+                        'Cancelar', [
+                            'type' => 'button', 'label' => false,
+                            'class' => 'border-light shadow-sm form-control btn btn-primary btn-disabled',
+                            'id' => 'cancel',
+                            'div' => [
+                                'class' => 'form-group-btn',
+                                'style' => 'margin-left:0.5rem;float:left;width:48%;'
+                            ]
+                        ]
+                    ), 'div',
+                    [
+                        'class' => 'form-group form-btn-double btns',
+                        'id' => 'buttons'
+                    ]
+                ),
+                'div',
+                ['class' => 'modal-body']
+            ),
+            [
+                'url' => '#', 'class' => 'modal-content forms shadow',
+                'method' => 'post'
+            ]
+        ),
+        'div',
+        ['class' => 'modal-dialog', 'id' => 'dialog']
+    );
+}
+$id = 'modal' . ucwords($mode);
+if ($count > 1) {
+    $id .= $count;
+}
+$modal = $this->Html->tag(
+    $modal . $this->Html->tag(
+        '', 'div', ['class' => 'modal-backdrop d-none', 'id' => 'backdrop']
+    ),
+    'div',
+    [
+        'id' => $id,
+        'class' => 'modal'
+    ]
+);

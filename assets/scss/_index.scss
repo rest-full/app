@@ -1,0 +1,76 @@
+/* index */
+
+main{
+    height:unquote(rem(($percent, ($percent - nth($numbers, 85))), $percent, '+') + 'rem');
+}
+
+#index {
+    margin: unquote(rem(($percent, ($percent - nth($numbers, 99))), $percent, '-') + 'rem') auto;
+    width: unquote(($percent * nth($numbers, 6))+nth($numbers, 48) + 'px');
+}
+
+#index img{
+    width: unquote($percent + '%');
+}
+
+.info_logado {
+    float: nth($float, 1);
+    position: absolute;
+    top: unquote(rem(($percent, ($percent - nth($numbers, 99))), $percent, '-') + 'rem');
+    margin-right: unquote(rem(($percent, ($percent - nth($numbers, 70))), $percent, '*') + 'rem');
+    list-style-type: none;
+    right: 0rem;
+}
+
+.container-header {
+    max-width: unquote($percent + '%');
+    padding: unquote(rem(($percent, ($percent - nth($numbers, 99))), $percent, '-') + 'rem') unquote(nth($numbers, 21) + 'rem');
+}
+
+.container-main {
+    @extend .container;
+    height: unquote($percent + nth($numbers, 50) + 'px');
+    margin-top: unquote((rem(($percent, ''), $percent, '-') * nth($numbers, 3)) + (rem(($percent, $percent), nth($numbers, 2), '/') / nth($numbers, 4)) + 'rem');
+    margin-bottom: unquote((rem(($percent, ''), $percent, '-') * nth($numbers, 3)) + (rem(($percent, $percent), nth($numbers, 2), '/') / nth($numbers, 4)) + 'rem');
+}
+
+.container-footer {
+    left: 0;
+    bottom: 0;
+    width: percentage(nth($numbers,1));
+    text-align: center;
+    box-shadow: $box-shadow-negative;
+    padding:0.5rem 0rem;
+}
+
+.flash {
+    height: unquote(nth($numbers, 66) + 'px');
+}
+
+%valid {
+    width: calculetion(calcPercent($percent, nth($numbers, 2), '/'), unquote(nth($numbers, 16) + 'px'), 0);
+    margin: unquote(rem(($percent, $percent), nth($numbers, 2), '/') + 'rem');
+    padding: unquote(rem(($percent, ''), $percent,'*') + 'rem') unquote(rem(($percent, ($percent - nth($numbers, 99))), $percent, '-') + rem(($percent, $percent), nth($numbers, 2), '/') + 'rem');
+    box-shadow: $box-shadow;
+}
+
+.validLeft {
+    @extend %valid;
+    float: nth($float, 1);
+}
+
+.validRight {
+    @extend %valid;
+    float: nth($float, 2);
+}
+
+.twoLine {
+    padding: unquote(rem(($percent, ($percent - nth($numbers, 99))), $percent, '-') + rem(($percent, $percent), nth($numbers, 2), '/') + 'rem');
+}
+
+.icon:before {
+    margin: unquote(rem(($percent, $percent), nth($numbers, 2), '/') + 'rem');
+    position: relative;
+    top: unquote(rem(($percent, 0.9), $percent, '-') + 'rem');
+}
+

@@ -1,0 +1,55 @@
+<?php
+
+$html = $this->Html->tag(
+    ($icon['version'] == 'connected'
+        ? 'You do have the minimum version installed which is 7.2, your version is '
+        . PHP_VERSION
+        : "You don't have the minimum version installed which is 7.2, your version is "
+        . PHP_VERSION),
+    [
+        'tag' => 'span',
+        'class' => 'icon icon-' . $icon['version'] . ' validLeft'
+    ]
+);
+$html .= $this->Html->tag(
+    ($icon['encrypt'] == 'connected' ? 'You did want to do the encryption'
+        : "You didn't want to do the encryption."),
+    [
+        'tag' => 'span',
+        'class' => 'icon icon-' . $icon['encrypt'] . ' validRight'
+    ]
+);
+$html .= $this->Html->tag(
+    ($icon['database'] == 'connected' ? 'The database can be enabled'
+        : "The database can't be enabled."),
+    [
+        'tag' => 'span',
+        'class' => 'icon icon-' . $icon['database'] . ' validLeft'
+    ]
+);
+$html .= $this->Html->tag(
+    ($icon['extensions'] == 'connected'
+        ? 'The mbstring and intl extensions are active in php.ini'
+        : "The mbstring and intl extensions aren't active in php.ini"),
+    [
+        'tag' => 'span',
+        'class' => 'icon icon-' . $icon['extensions'] . ' validRight'
+    ]
+);
+$html .= $this->Html->tag(
+    ($icon['email'] == 'connected' ? 'Smtp email sending is active.'
+        : "Smtp email sending isn't active."),
+    [
+        'tag' => 'span',
+        'class' => 'icon icon-' . $icon['email'] . ' validRight'
+    ]
+);
+$html .= $this->Html->tag(
+    ($icon['pdf'] == 'connected' ? 'The html to pdf converter is active'
+        : "The html to pdf converter isn't active"),
+    [
+        'tag' => 'span',
+        'class' => 'icon icon-' . $icon['pdf'] . ' validLeft'
+    ]
+);
+$content = $this->Html->tag($html, ['tag' => 'div']);

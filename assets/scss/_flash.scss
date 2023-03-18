@@ -1,0 +1,22 @@
+/* flash */
+.alert {
+    margin: 0rem 0.6rem 0.25rem 0.4rem;
+    font-weight: bold;
+    padding: 0.75rem 0.25rem 0.75rem 0.75rem;
+}
+
+.alert img {
+    width: 27.05px;
+    margin-right: 0.5rem;
+}
+
+@each $key, $value in $flash {
+    .alert-#{$key} {
+        background-color:$value;
+        border-color:$value;
+    }
+}
+
+.alert-error span, .alert-success span, .alert-warning span, .alert-info span {
+    color:#FFFFFF;
+}
