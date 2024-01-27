@@ -1,0 +1,23 @@
+<?php
+
+$successes = '';
+foreach ($this->display('success') as $success) {
+    if (stripos($success, ' - ') !== false) {
+        list(, $success) = explode(' - ', $success);
+    }
+    $successes .= $this->tag($success, 'span');
+}
+$content .= $this->tag(
+    $this->tag($this->image(DS . 'img' . DS . 'success.jpg') . $successes, 'div', ['class' => 'float-start successJs']
+    ) . $this->tag(
+        $this->tag('', 'span', ['class' => 'icon icon-fechar', 'id' => 'closeFlash']),
+        'div',
+        ['class' => 'float-end closed', 'data-id' => 'success']
+    ),
+    'div',
+    [
+        'id' => 'success',
+        'class' => 'alert alert-success' . ($successes === '' ? ' disabled' : ''),
+        'style' => 'height:52px;'
+    ]
+);

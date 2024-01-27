@@ -1,0 +1,54 @@
+<?php
+
+$head = $this->Html->heads('meta', ['charset' => 'UTF-8']) . $this->Html->heads(
+        'meta',
+        [
+            'name' => 'viewport',
+            'content' => 'width=device-width, initial-scale=1, shrink-to-fit=no'
+        ]
+    ) . $this->Optimizer->optimize($optimize['title'], $optimize['icon']);
+foreach ($styles as $style) {
+    $head .= $this->Html->heads(
+        'css',
+        ['url' => 'css' . DS . $style . '.css', 'rel' => 'stylesheet']
+    );
+}
+$body = $this->Html->tag(
+        $this->Html->tag(
+            $this->Html->image(
+                '/img/rest-full.png',
+                ['id' => 'logo', 'link' => ['url' => '/main/index']]
+            ) . $this->Html->listing(
+                ['Olá Visitante', ''],
+                [
+                    'li' => ['class' => 'usuario_logado', []],
+                    'class' => 'info_logado'
+                ]
+            ),
+            'div',
+            ['class' => 'container-header']
+        ),
+        'header'
+    ) . $this->Flash->render() . $this->Html->tag(
+        $this->content(), 'main'
+    ) . $this->Html->tag(
+        $this->Html->tag(
+            'Desenvolvido por Simao web Solutions',
+            'div',
+            ['class' => 'container-footer']
+        ),
+        'footer'
+    );
+$script = $scriptTime . 'var auth = ' . json_encode(
+        $auth,
+        JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE
+    ) . ';';
+foreach ($scripts as $script) {
+    $body .= $this->Html->heads(
+        'script', ['url' => 'js' . DS . $script . '.js']
+    );
+}
+$layout = $this->Html->typeDocumentHtml() . $this->Html->tag(
+        $this->Html->tag($head, 'head') . $this->Html->tag($body, 'body'),
+        'html'
+    );

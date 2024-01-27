@@ -1,0 +1,19 @@
+<?php
+
+$errors = '';
+foreach ($this->display('error') as $error) {
+    if (stripos($error, ' - ') !== false) {
+        list(, $error) = explode(' - ', $error);
+    }
+    $errors .= $this->tag($error, 'span');
+}
+$content = $this->tag(
+    $this->tag($this->image(DS . 'img' . DS . 'error.jpg') . $errors, 'div', ['class' => 'float-start errorJs']
+    ) . $this->tag(
+        $this->tag('', 'span', ['class' => 'icon icon-fechar', 'id' => 'closeFlash']),
+        'div',
+        ['class' => 'float-end closed', 'data-id' => 'error']
+    ),
+    'div',
+    ['id' => 'error', 'class' => 'alert alert-error' . ($errors === '' ? ' disabled' : ''), 'style' => 'height:52px;']
+);

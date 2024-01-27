@@ -1,0 +1,115 @@
+* {
+  padding: 0rem;
+  margin: 0rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+/* icons */
+/** error **/
+#corpo {
+  line-height: 1.5;
+  box-sizing: border-box;
+  background-color: #ddd9ce;
+}
+#corpo .errorTitle {
+  width: 100%;
+  background-color: #ff0000;
+  color: #ffff00;
+}
+#corpo .errorTitle h1 {
+  font-weight: 700;
+  margin-left: 1.563rem;
+}
+#corpo .row-error {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -14.545rem !important;
+  width: 100%;
+  margin-left: 0rem !important;
+}
+#corpo .row-error .cols-5 {
+  flex: 0 0 100%;
+  margin: 0rem 1rem !important;
+  float: left;
+  max-width: 37.688rem !important;
+}
+#corpo .row-error .cols-5 .badge {
+  display: inline-block;
+  width: 36rem;
+  padding: 0.5rem 0rem;
+  margin: 0.5rem 0rem;
+  font-size: 75%;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  color: #fff;
+  background-color: #17a2b8 !important;
+  height: 3.35rem;
+}
+#corpo .row-error .cols-5 .badge span {
+  font-size: 90%;
+  font-weight: 700;
+  background-color: #17a2b8 !important;
+  padding: 0.5rem 0rem;
+  position: relative;
+  top: 0rem;
+  display: block;
+}
+#corpo .row-error .cols-7 {
+  flex: 0 0 100%;
+  max-width: calc(100% - 39.688rem) !important;
+}
+#corpo .row-error .cols-7 .border {
+  border: 0.64rem solid #dee2e6;
+  width: 100%;
+  padding: 0.25rem 0.125rem !important;
+  background-color: #17a2b8;
+  max-width: calc(100% - 1.688rem) !important;
+}
+#corpo .row-error .cols-7 .border .row-info {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0.25rem 0rem !important;
+  background-color: #17a2b8;
+}
+#corpo .row-error .cols-7 .border .row-info:nth-child(1) {
+  margin-top: 0rem !important;
+}
+#corpo .row-error .cols-7 .border .row-info:nth-child(10) {
+  margin-bottom: 0rem !important;
+}
+#corpo .row-error .cols-7 .border .row-info .cols-12 {
+  flex: 0 0 100%;
+  color: #000000;
+  max-width: calc(100% - 5.9rem) !important;
+  background-color: #ffffff;
+  padding-left: 0.5rem;
+}
+#corpo .row-error .cols-7 .border .row-info .cols-3 {
+  color: #000000;
+  flex: 0 0 100%;
+  float: left;
+  margin-left: 0.1rem !important;
+  margin-right: 0.25rem !important;
+  max-width: 3.438rem !important;
+  padding-left: 1.5rem !important;
+  background-color: #ffffff;
+  text-align: right;
+}
+#corpo .row-error .cols-7 .border .row-info .cols-3-active {
+  background-color: blue !important;
+  color: white;
+}
+#corpo .row-error .cols-7-disabled {
+  display: none;
+}
+/*# sourceMappingURL=error.min.css.map */

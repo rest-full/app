@@ -1,0 +1,19 @@
+@mixin font() {
+  font-family: $file;
+  src: eot($location);
+  src: urlIndetification($location,$caracterIcon,$file);
+  font-weight: normal;
+  font-style: normal;
+}
+
+@mixin class() {
+  font-family: $file !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

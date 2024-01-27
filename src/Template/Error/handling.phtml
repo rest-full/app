@@ -1,0 +1,49 @@
+<?php
+
+$title = $this->Html->tag($this->Html->tag($msg, 'h1'), 'div', ['class' => 'errorTitle']);
+$a = 0;
+$traces = array_reverse($traces);
+$args = array_reverse($args);
+foreach ($traces as $trace) {
+    $errorTrace[] = $this->Html->tag(
+        $this->Html->tag(substr($trace, 0, strpos($trace, " - ")), 'span') . PHP_EOL . $this->Html->tag(
+            substr($trace, strpos($trace, " - ") + 3),
+            'span'
+        ),
+        'div',
+        ['class' => 'badge linkjs', 'data-target' => 'way-' . $a]
+    );
+    $keys = array_keys($args[substr($trace, 0, strpos($trace, " - "))]['line']);
+    $arguments = [];
+    $count = count($keys);
+    for ($b = 0; $b < $count; $b++) {
+        $active = $args[substr($trace, 0, strpos($trace, " - "))]['identify'] === $keys[$b] ? ' cols-3-active' : '';
+        $arguments[] = $this->Html->tag(
+            $this->Html->tag($keys[$b], 'div', ['class' => 'cols-3' . $active]) . $this->Html->tag(
+                $args[substr($trace, 0, strpos($trace, " - "))]['line'][$keys[$b]],
+                'div',
+                ['class' => 'cols-12']
+            ),
+            'div',
+            ['class' => 'row-info']
+        );
+        if ($b === Count($keys) - 1) {
+            $disabled = $a != 0 ? ' cols-7-disabled' : '';
+            $errorArgs[] = $this->Html->tag(
+                implode('', $arguments),
+                'div',
+                ['class' => 'border' . $disabled, 'id' => 'way-' . $a]
+            );
+        }
+    }
+    $a++;
+}
+$content = $title . $this->Html->tag(
+        $this->Html->tag(implode(PHP_EOL, $errorTrace), 'div', ['class' => 'cols-5']) . $this->Html->tag(
+            implode(PHP_EOL, $errorArgs),
+            'div',
+            ['class' => 'cols-7']
+        ),
+        'div',
+        ['class' => 'row-error']
+    );

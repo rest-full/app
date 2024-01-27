@@ -1,0 +1,23 @@
+<?php
+
+$warnings = '';
+foreach ($this->display('warning') as $warning) {
+    if (stripos($warning, ' - ') !== false) {
+        list(, $warning) = explode(' - ', $warning);
+    }
+    $warnings .= $this->tag($warning, 'span');
+}
+$content .= $this->tag(
+    $this->tag($this->image(DS . 'img' . DS . 'warning.jpg') . $warnings, 'div', ['class' => 'float-start warningJs']
+    ) . $this->tag(
+        $this->tag('', 'span', ['class' => 'icon icon-fechar', 'id' => 'closeFlash']),
+        'div',
+        ['class' => 'float-end closed', 'data-id' => 'warning']
+    ),
+    'div',
+    [
+        'id' => 'warning',
+        'class' => 'alert alert-warning' . ($warnings === '' ? ' disabled' : ''),
+        'style' => 'height:52px;'
+    ]
+);

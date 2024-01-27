@@ -1,0 +1,14 @@
+@charset "UTF-8";
+@font-face {
+  @include font();
+}
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  @include class();
+}
+
+@each $key, $value in $icons {
+  .icon-#{$key}:before {
+    content: $value;
+  }
+}

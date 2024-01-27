@@ -1,0 +1,25 @@
+<?php
+
+$head = $this->Html->heads('meta', ['charset' => 'UTF-8']) . $this->Html->heads(
+        'meta',
+        [
+            'name' => 'viewport',
+            'content' => 'width=device-width, initial-scale=1, shrink-to-fit=no'
+        ]
+    ) . $this->Optimizer->optimize($optimize['title'], $optimize['icon']);
+foreach ($styles as $style) {
+    $head .= $this->Html->heads(
+        'css',
+        ['url' => 'css' . DS . $style . '.css', 'rel' => 'stylesheet']
+    );
+}
+$body = $this->content();
+foreach ($scripts as $script) {
+    $body .= $this->Html->heads(
+        'script', ['url' => 'js' . DS . $script . '.js']
+    );
+}
+$layout = $this->Html->typeDocumentHtml() . $this->Html->tag(
+        $this->Html->tag($head, 'head') . $this->Html->tag($body, 'body', ['id' => 'corpo']),
+        'html'
+    );

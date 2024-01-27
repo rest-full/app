@@ -1,0 +1,74 @@
+/* index */
+
+main {
+  height: unquote(nth($numbers, 14) + '.' + (calcNumber($percent, nth($numbers, 3), '*') + nth($numbers, 75)) + 'rem');
+}
+
+#index {
+  margin: unquote(calcNumber($percent, $percent, '-') + 'rem') auto;
+  width: unquote(nth($numbers, 40) + '.' + nth($numbers, 5) + 'px');
+}
+
+#index img {
+  width: unquote($percent + '%');
+}
+
+.info_logado {
+  float: nth($float, 1);
+  position: absolute;
+  top: unquote(calcNumber($percent, $percent, '-') + 'rem');
+  margin-right: unquote(nth($numbers, 30) + 'rem');
+  list-style-type: none;
+  right: unquote(calcNumber($percent, $percent, '-') + 'rem');
+}
+
+.container-header {
+  max-width: unquote($percent + '%');
+  padding: unquote(calcNumber($percent, $percent, '-') + 'rem') unquote(nth($numbers, 21) + 'rem');
+}
+
+.container-main {
+  height: unquote(($percent + nth($numbers, 50)) + 'px');
+  margin-top: unquote(nth($numbers, 3) + '.' + ($percent + nth($numbers, 25)) + 'rem') unquote(calcNumber($percent, $percent, '-') + 'rem');
+}
+
+.container-footer {
+  left: 0;
+  bottom: 0;
+  width: percentage(nth($numbers, 1));
+  text-align: center;
+  box-shadow: $box-shadow-negative;
+  padding: 0.5rem 0rem;
+}
+
+.flash {
+  height: unquote(nth($numbers, 4) + '.' + ($percent + nth($numbers, 25)) + 'rem');
+}
+
+%valid {
+  width: calculetion(calcNumber($percent, nth($numbers, 2), '/', true), unquote(nth($numbers, 1) + 'rem'), 0);
+  margin: unquote(calcNumber($percent, $percent, '-') + '.' + nth($numbers, 5) + 'rem');
+  padding: unquote(nth($numbers, 1) + 'rem') unquote(calcNumber($percent, $percent, '-') + '.' + nth($numbers, 5) + 'rem');
+  box-shadow: $box-shadow-positive;
+}
+
+.validLeft {
+  @extend %valid;
+  float: nth($float, 1);
+}
+
+.validRight {
+  @extend %valid;
+  float: nth($float, 2);
+}
+
+.twoLine {
+  padding: unquote(calcNumber($percent, $percent, '-') + '.' + nth($numbers, 5) + 'rem');
+}
+
+.icon:before {
+  margin: unquote(calcNumber($percent, $percent, '-') + '.' + nth($numbers, 5) + 'rem');
+  position: relative;
+  top: unquote(calcNumber($percent, $percent, '-') + '.' + nth($numbers, 1) + 'rem');
+}
+

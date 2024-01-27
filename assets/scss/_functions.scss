@@ -1,0 +1,32 @@
+@use "sass:list";
+@use "sass:math";
+
+@function calculetion($pixel, $distance, $important) {
+  @if ($important == 1) {
+    @return calc(#{$pixel} - #{$distance}) !important;
+  }
+  @return calc(#{$pixel} - #{$distance});
+}
+
+@function calcNumber($pixel, $number, $type, $boolPercent:false) {
+  $result: 0;
+  @if ($type == '-') {
+    $result: ($pixel - $number);
+  } @else if ($type == '+') {
+    $result: ($pixel + $number);
+  } @else if ($type == '*') {
+    $result: ($pixel * $number);
+  } @else {
+    $result: math.div($pixel, $number);
+  }
+  @if ($boolPercent) {
+    @if ($pixel==$number) {
+      @return $percent;
+    } @else {
+      $newResult: math.div($result, $percent);
+      @return percentage($newResult);
+    }
+  } @else {
+    @return $result;
+  }
+}

@@ -1,0 +1,19 @@
+<?php
+
+$infos = '';
+foreach ($this->display('info') as $info) {
+    if (stripos($info, ' - ') !== false) {
+        list(, $info) = explode(' - ', $info);
+    }
+    $infos .= $this->tag($info, 'span');
+}
+$content .= $this->tag(
+    $this->tag($this->image(DS . 'img' . DS . 'info.jpg') . $infos, 'div', ['class' => 'float-start infoJs']
+    ) . $this->tag(
+        $this->tag('', 'span', ['class' => 'icon icon-fechar', 'id' => 'closeFlash']),
+        'div',
+        ['class' => 'float-end closed', 'data-id' => 'info']
+    ),
+    'div',
+    ['id' => 'info', 'class' => 'alert alert-info' . ($infos === '' ? ' disabled' : ''), 'style' => 'height:52px;']
+);

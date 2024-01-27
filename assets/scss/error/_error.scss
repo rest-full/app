@@ -1,0 +1,124 @@
+/** error **/
+#corpo {
+  line-height: calcNumber(nth($numbers, 3), nth($numbers, 2), '/');
+  box-sizing: border-box;
+  background-color: #ddd9ce;
+
+  & .errorTitle {
+    width: unquote($percent + '%');
+    background-color: #ff0000;
+    color: #ffff00;
+
+    & h1 {
+      font-weight: calcNumber($percent, nth($numbers, 7), '*');
+      margin-left: unquote(nth($numbers, 1) + '.' + (calcNumber($percent, nth($numbers, 5), '*') + nth($numbers, 63)) + 'rem');
+    }
+  }
+
+  & .row-error {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: unquote('-' + nth($numbers, 14) + '.' + (calcNumber($percent, nth($numbers, 5), '*') + nth($numbers, 45)) + 'rem') !important;
+    width: 100%;
+    margin-left: 0rem !important;
+
+    & .cols-5 {
+      flex: $flex;
+      margin: unquote(calcNumber($percent, $percent, '-') + 'rem') unquote(calcNumber($percent, nth($numbers, 99), '-') + 'rem') !important;
+      float: left;
+      max-width: unquote(nth($numbers, 37) + '.' + (calcNumber($percent, nth($numbers, 6), '*') + nth($numbers, 88)) + 'rem') !important;
+
+      & .badge {
+        display: inline-block;
+        width: unquote(calcNumber($percent, nth($numbers, 64), '-') + 'rem');
+        padding: $size;
+        margin: $size;
+        font-size: calcNumber($percent, nth($numbers, 25), '-', true);
+        font-weight: calcNumber($percent, nth($numbers, 7), '*');
+        line-height: nth($numbers, 1);
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: baseline;
+        border-radius: unquote(calcNumber(nth($numbers, 1), nth($numbers, 4), '/') + 'rem');
+        transition: color unquote(calcNumber($percent, $percent, '-') + '.'+nth($numbers, 15) + 's') ease-in-out, background-color unquote(calcNumber($percent, $percent, '-') + '.'+nth($numbers, 15) + 's') ease-in-out, border-color unquote(calcNumber($percent, $percent, '-') + '.'+nth($numbers, 15) + 's') ease-in-out, box-shadow unquote(calcNumber($percent, $percent, '-') + '.'+nth($numbers, 15) + 's') ease-in-out;
+        color: #fff;
+        background-color: #17a2b8 !important;
+        height: unquote(nth($numbers, 3) + '.' + nth($numbers, 35) + 'rem');
+
+        & span {
+          font-size: unquote(nth($numbers, 90) + '%');
+          font-weight: calcNumber($percent, nth($numbers, 7), '*');
+          background-color: #17a2b8 !important;
+          padding: unquote(calcNumber(nth($numbers, 1), nth($numbers, 2), '/') + 'rem') unquote(calcNumber($percent, $percent, '-') + 'rem');
+          position: relative;
+          top: unquote(calcNumber($percent, $percent, '-') + 'rem');
+          display: block;
+        }
+      }
+    }
+
+    & .cols-7 {
+      flex: $flex;
+      max-width: calculetion(unquote(calcNumber($percent, $percent, '/', true) + '%'), unquote(nth($numbers, 39) + '.' + (calcNumber($percent, nth($numbers, 6), '*') + nth($numbers,88)) + 'rem'), 1);
+
+      & .border {
+        border: unquote(calcNumber($percent, $percent, '-') + '.' + (calcNumber($percent, $percent, '/') + nth($numbers, 63)) + 'rem') solid #dee2e6;
+        width: unquote(calcNumber($percent, $percent, '/', true) + '%');
+        padding: unquote(calcNumber(nth($numbers, 1), nth($numbers, 4), '/') + 'rem') unquote(calcNumber(nth($numbers, 1), nth($numbers, 8), '/') + 'rem') !important;
+        background-color: #17a2b8;
+        max-width: calculetion(unquote(calcNumber($percent, $percent, '/', true) + '%'), unquote(nth($numbers, 1) + '.' + (calcNumber($percent, nth($numbers, 6), '*') + nth($numbers,88)) + 'rem'), 1);
+
+
+        & .row-info {
+          display: -ms-flexbox;
+          display: flex;
+          -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+          width: unquote($percent + '%');
+          margin: unquote(calcNumber(nth($numbers, 1), nth($numbers, 4), '/') + 'rem') unquote(calcNumber($percent, $percent, '-') + 'rem') !important;
+          background-color: #17a2b8;
+
+
+          &:nth-child(1) {
+            margin-top: unquote(calcNumber($percent, $percent, '-') + 'rem') !important;
+          }
+
+          &:nth-child(10) {
+            margin-bottom: unquote(calcNumber($percent, $percent, '-') + 'rem') !important;
+          }
+
+          & .cols-12 {
+            flex: 0 0 100%;
+            color: #000000;
+            max-width: calculetion(unquote($percent + '%'), unquote(nth($numbers, 5) + '.' + nth($numbers, 9) + 'rem'), 1);
+            background-color: #ffffff;
+            padding-left: unquote(calcNumber($percent, $percent, '-') + '.' + nth($numbers, 5) + 'rem');
+          }
+
+          & .cols-3 {
+            color: #000000;
+            flex: $flex;
+            float: left;
+            margin-left: unquote(calcNumber($percent, $percent, '-') + '.' + nth($numbers,1) + 'rem') !important;
+            margin-right: unquote(calcNumber(nth($numbers, 1), nth($numbers, 4), '/') + 'rem') !important;
+            max-width: unquote(nth($numbers, 3) + '.'+ (calcNumber($percent, nth($numbers, 4), '*') + nth($numbers, 38)) + 'rem') !important;
+            padding-left: unquote(calcNumber($percent, $percent, '/') + '.' + nth($numbers, 5) + 'rem') !important;
+            background-color: #ffffff;
+            text-align: right;
+
+            &-active {
+              background-color: blue !important;
+              color: white;
+            }
+          }
+        }
+      }
+
+      &-disabled {
+        display: none;
+      }
+    }
+  }
+}
